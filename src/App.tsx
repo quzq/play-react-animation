@@ -1,9 +1,7 @@
 import "./App.css";
-import { Box, useDisclosure } from "@chakra-ui/react";
 //import { Modal, ModalContent, ModalOverlay } from "@chakra-ui/modal";
 
 function App() {
-  const { open, onOpen, onClose } = useDisclosure();
   return (
     <>
       <h1>Vite + React</h1>
