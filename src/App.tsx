@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { Box, useDisclosure } from "@chakra-ui/react";
+//import { Modal, ModalContent, ModalOverlay } from "@chakra-ui/modal";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { open, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <button onClick={() => {}}>Open Modal</button>
+        {/* <MyModal isOpen={open} close={onClose}>
+          <h2>Modal</h2>
+        </MyModal> */}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
+// const MyModal = ({
+//   isOpen,
+//   close,
+//   children,
+// }: {
+//   isOpen: boolean;
+//   close: () => void;
+//   children: React.ReactNode;
+// }) => {
+//   return (
+//     <Modal isOpen={isOpen} onClose={close} isCentered closeOnOverlayClick>
+//       <ModalOverlay />
+//       <ModalContent
+//         mt="75px"
+//         h="calc(100vh - 75px)"
+//         w="100%"
+//         maxW="100%"
+//         borderRadius={0}
+//         background="none"
+//         onKeyDown={(event) => {
+//           event.stopPropagation(); // 親への伝搬を防ぐ
+//         }}
+//       >
+//         <Box px="4rem" pl="48px" pr="48px" pt="32px">
+//           <Box flexGrow={1} bg="white" minWidth="936px" w="100%">
+//             {children}
+//           </Box>
+//         </Box>
+//       </ModalContent>
+//     </Modal>
+//   );
+// };
